@@ -1,0 +1,16 @@
+MODULE test
+
+TITLE 'test'
+
+DECLARATIONS
+CLOCK pin 1;
+data pin 2;
+
+!out0, !out1, !out2, !out3, !out4, !out5, !out6, !out7, !out8, !out9 pin 14..23 istype 'reg';
+
+EQUATIONS
+out0 := data; 
+[out9..out1] := [out8..out0];
+[out9..out0].clk = CLOCK;
+
+END
